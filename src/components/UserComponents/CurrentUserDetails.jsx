@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import UserDetailsTabsComponent from './UserDetailsTabsComponent';
+import UserAvatarComponent from '../UserComponents/UserAvatarComponent';
 
 export default class CurrentUserDetails extends Component {
 
@@ -16,7 +17,7 @@ export default class CurrentUserDetails extends Component {
         return <div className="current-user-details">
             <div className="general-details">
                 <div className="user-avatar">
-                    <img src={selectedUser.avatar}/>
+                    <UserAvatarComponent avatar={selectedUser.avatar} width="150px"/>
                     <p><span>Age</span> {this.calculateYears(new Date(selectedUser.dateOfBirth))} <span>Gender</span> {selectedUser.gender}</p>
                 </div>
                 <div className="other-details">

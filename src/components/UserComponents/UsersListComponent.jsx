@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import UserAvatarComponent from '../UserComponents/UserAvatarComponent';
 
 export default class UsersListComponent extends Component {
 
@@ -13,7 +14,7 @@ export default class UsersListComponent extends Component {
             return (<div className="user-list">
                 {model.users.map((item, key) =>
                     <div className={model.selectedUser && model.selectedUser.id ===  item.id ? 'user-item selected' : 'user-item'} key={key}>
-                        <img className="avatar" src={item.avatar}/>
+                        <UserAvatarComponent avatar={item.avatar} width="50px"/>
                         <div className="user-description">
                             <span>{`${item.firstName} ${item.lastName}`}</span>
                             <a onClick={this.onItemClick.bind(this, item)}  href="#">Details</a>
